@@ -19,6 +19,10 @@ func (cmd *cleanup) Spec() cli.CommandSpec {
 }
 
 func (cmd *cleanup) Run(fl *pflag.FlagSet) {
+	Cleanup()
+}
+
+func Cleanup() {
 	if internal.CheckFileExists(internal.RepositoryFileLocation) {
 		internal.RemoveRepository()
 	} else {
