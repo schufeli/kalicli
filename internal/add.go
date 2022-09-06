@@ -43,5 +43,5 @@ func UpdateRepositoryList() {
 		log.Fatalf("%s[x]%s Failed updating sources.list: %s\n", ColorRed, ColorNone, err)
 	}
 
-	fmt.Printf("%s[+]%s Updated sources.list \n", ColorGreen, ColorNone)
+	fmt.Printf("%s[+]%s Updated sources.list\n", ColorGreen, ColorNone)
 }
