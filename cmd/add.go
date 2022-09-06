@@ -19,6 +19,10 @@ func (cmd *add) Spec() cli.CommandSpec {
 }
 
 func (cmd *add) Run(fl *pflag.FlagSet) {
+	Add()
+}
+
+func Add() {
 	if !internal.CheckKeyExists() {
 		internal.AddRepositoryKey()
 	} else {

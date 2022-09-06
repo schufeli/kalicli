@@ -23,5 +23,6 @@ func (r *root) Subcommands() []cli.Command {
 	return []cli.Command{
 		new(add),
 		new(cleanup),
+		new(search),
 	}
 }
