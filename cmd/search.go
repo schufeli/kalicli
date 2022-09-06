@@ -28,6 +28,11 @@ func (cmd *search) Run(fl *pflag.FlagSet) {
 }
 
 func Run(packageName string) {
+	if !internal.CheckFileExists(internal.KeyFileLocation) || !internal.CheckKeyExists() {
+		internal.AddRepositoryKey()
+		internal.ExportRepositoryKey()
+	}
+
 	if !internal.CheckFileExists(internal.RepositoryFileLocation) {
 		internal.AddRepository()
 	}
