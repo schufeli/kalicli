@@ -6,26 +6,26 @@ import (
 	"go.coder.com/cli"
 )
 
-type search struct{}
+type install struct{}
 
-func (cmd *search) Spec() cli.CommandSpec {
+func (cmd *install) Spec() cli.CommandSpec {
 	return cli.CommandSpec{
-		Name:    "search",
-		Usage:   "[package name]",
-		Aliases: []string{"s"},
-		Desc:    "Search if tool exists in repository",
+		Name:    "install",
+		Usage:   "[package names]",
+		Aliases: []string{"i"},
+		Desc:    "Install tools",
 	}
 }
 
-func (cmd *search) Run(fl *pflag.FlagSet) {
-	if len(fl.Arg(0)) == 0 {
+func (cmd *install) Run(fl *pflag.FlagSet) {
+	if len(fl.Args()) == 0 {
 		fl.Usage()
 	} else {
-		Run(fl.Arg(0))
+		Install(fl.Args())
 	}
 }
 
-func Run(packageName string) {
+func Install(packages []string) {
 	if !internal.CheckFileExists(internal.KeyFileLocation) || !internal.CheckKeyExists() {
 		internal.AddRepositoryKey()
 		internal.ExportRepositoryKey()
@@ -36,7 +36,7 @@ func Run(packageName string) {
 		internal.UpdateRepositoryList()
 	}
 
-	internal.Search(packageName)
+	internal.Install(packages)
 
 	if internal.CheckFileExists(internal.RepositoryFileLocation) {
 		internal.RemoveRepository()

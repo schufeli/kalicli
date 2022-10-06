@@ -14,7 +14,7 @@ func (cmd *cleanup) Spec() cli.CommandSpec {
 	return cli.CommandSpec{
 		Name:    "cleanup",
 		Aliases: []string{"c"},
-		Desc:    "Cleanup repositories, files and keys created by this tool",
+		Desc:    "Remove repositories, files and keys created by this tool",
 	}
 }
 
