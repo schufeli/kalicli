@@ -24,6 +24,7 @@ func (r *root) Subcommands() []cli.Command {
 		new(add),
 		new(cleanup),
 		new(install),
+		new(remove),
 		new(search),
 	}
 }
