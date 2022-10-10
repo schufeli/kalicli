@@ -6,25 +6,25 @@ import (
 	"go.coder.com/cli"
 )
 
-type InstallCommand struct{}
+type SearchCommand struct{}
 
-func (cmd *InstallCommand) Spec() cli.CommandSpec {
+func (cmd *SearchCommand) Spec() cli.CommandSpec {
 	return cli.CommandSpec{
-		Name:  "install",
-		Usage: "[PACKAGES]",
-		Desc:  "Install tools",
+		Name:  "search",
+		Usage: "[PACKAGE]",
+		Desc:  "Search tool in repository",
 	}
 }
 
-func (cmd *InstallCommand) Run(fl *pflag.FlagSet) {
-	if len(fl.Args()) == 0 {
+func (cmd *SearchCommand) Run(fl *pflag.FlagSet) {
+	if len(fl.Arg(0)) == 0 {
 		fl.Usage()
 	} else {
-		install(fl.Args())
+		search(fl.Arg(0))
 	}
 }
 
-func install(packages []string) {
+func search(packagename string) {
 	if !lib.CheckFileExists(lib.KeyFileLocation) || !lib.CheckKeyExists() {
 		lib.AddRepositoryKey()
 		lib.ExportRepositoryKey()
@@ -35,7 +35,7 @@ func install(packages []string) {
 		lib.UpdateRepositoryList()
 	}
 
-	lib.Install(packages)
+	lib.Search(packagename)
 
 	if lib.CheckFileExists(lib.RepositoryFileLocation) {
 		lib.RemoveRepository()

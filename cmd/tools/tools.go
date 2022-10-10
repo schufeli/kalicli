@@ -22,5 +22,7 @@ func (r *ToolsCommand) Spec() cli.CommandSpec {
 func (r *ToolsCommand) Subcommands() []cli.Command {
 	return []cli.Command{
 		new(InstallCommand),
+		new(UninstallCommand),
+		new(SearchCommand),
 	}
 }

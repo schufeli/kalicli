@@ -18,14 +18,10 @@ func (cmd *RemoveCommand) Spec() cli.CommandSpec {
 }
 
 func (cmd *RemoveCommand) Run(fl *pflag.FlagSet) {
-	if len(fl.Args()) == 0 {
-		fl.Usage()
-	} else {
-		remove(fl.Args())
-	}
+	remove()
 }
 
-func remove(packages []string) {
+func remove() {
 	if lib.CheckFileExists(lib.RepositoryFileLocation) {
 		lib.RemoveRepository()
 	} else {
