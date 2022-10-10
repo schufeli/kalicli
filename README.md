@@ -2,7 +2,9 @@
 
 Small CLI tool to install tools from the kali repository and not destroy your installation because you forgot to remove the repos again before updating or upgrading. 
 
-![screenshot](screenshot.gif)
+<div align="center">
+    <img src="screenshot.gif" alt="Screenshot" />
+</div>
 
 # Installation
 
