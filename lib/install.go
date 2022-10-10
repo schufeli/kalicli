@@ -1,4 +1,4 @@
-package internal
+package lib
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ func Install(packages []string) {
 	if err := cmd.Run(); err != nil {
 		fmt.Println(err.Error())
 		RemoveRepository()
-		log.Fatalf("%s[x]%s Failed to install tools: %s\n", ColorRed, ColorNone, err)
+		log.Fatalf("%s[x]%s Failed to install: %s\n", ColorRed, ColorNone, err)
 	}
 
 	fmt.Printf("%s[+]%s Installation successful\n", ColorGreen, ColorNone)

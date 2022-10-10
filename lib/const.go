@@ -1,4 +1,4 @@
-package internal
+package lib
 
 const ColorRed = "\033[0;31m"
 const ColorNone = "\033[0m"

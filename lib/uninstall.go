@@ -1,4 +1,4 @@
-package internal
+package lib
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"os/exec"
 )
 
-func Remove(packages []string) {
+func Uninstall(packages []string) {
 	cmd := exec.Command("apt", "remove")
 
 	cmd.Args = append(cmd.Args, packages...)

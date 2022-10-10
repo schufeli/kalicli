@@ -1,4 +1,4 @@
-package internal
+package lib
 
 import (
 	"fmt"
@@ -6,8 +6,8 @@ import (
 	"os/exec"
 )
 
-func Search(packageName string) {
-	out, err := exec.Command("apt", "search", packageName).Output()
+func Search(packagename string) {
+	out, err := exec.Command("apt", "search", packagename).Output()
 
 	if err != nil {
 		RemoveRepository()
