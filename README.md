@@ -28,3 +28,39 @@ If you have a [Go](https://go.dev/) environment ready to go (at least go 1.19), 
 go install github.com/schufeli/kalicli@latest
 ```
 PS: You need at least go 1.19 to compile kalicli.
+
+## Usage
+
+```
+Usage: kalicli COMMAND
+
+Description: Easily install tools from the official kali repository
+
+Commands:
+	repo   - Manage kali repository (key, file)
+	tools  - Manage kali tools and packages
+```
+### `repo` subcommand
+
+```
+Usage: kalicli repo COMMAND
+
+Description: Manage kali repository (key, file)
+
+Commands:
+	add     - Add repository-key and file
+	remove  - Remove repository-key and file
+```
+
+### `tools` subcommand
+
+```
+Usage: kalicli tools COMMAND
+
+Description: Manage kali tools and packages
+
+Commands:
+	install    - Install tools
+	uninstall  - Uninstall tools
+	search     - Search tool in repository
+```
