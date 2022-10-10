@@ -6,9 +6,9 @@ Small CLI tool to install tools from the kali repository and not destroy your in
     <img src="screenshot.gif" alt="Screenshot" />
 </div>
 
-# Installation
+## Installation
 
-## Binary Releases
+### Binary Releases
 
 You can download the latest compiled binary release [here](https://github.com/schufeli/kalicli/releases). 
 
@@ -20,7 +20,7 @@ In the download directory execute the following command:
 sudo cp ./kalicli /usr/local/bin/
  ```
 
-## Using `go install`
+### Using `go install`
 
 If you have a [Go](https://go.dev/) environment ready to go (at least go 1.19), it's as easy as:
 
@@ -28,6 +28,3 @@ If you have a [Go](https://go.dev/) environment ready to go (at least go 1.19), 
 go install github.com/schufeli/kalicli@latest
 ```
 PS: You need at least go 1.19 to compile kalicli.
-
-# Usage
-
